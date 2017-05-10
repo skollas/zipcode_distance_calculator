@@ -6,7 +6,7 @@ include "dist.class.php";
 $df = new Distance();
 $zip1 = $df->getLnt($_GET['zip1']);
 $zip2 = $df->getLnt($_GET['zip2']);
-$result = $df->GetDistance($zip1, $zip2);
+$result = $df->ConvertLatLong($zip1, $zip2);
 
 if(isset($_GET['unit'])) {
 	$unit = $_GET['unit'];
