@@ -1,5 +1,6 @@
 <?php
 
+if(isset($_GET['zip1'])) {
 include "dist.class.php";
 
 $df = new Distance();
@@ -15,7 +16,26 @@ if(isset($_GET['unit'])) {
 		echo $result['Mile'] . ' Miles';
 }
 else
-	var_dump($result);
-	
-
+	echo $result['Mile'] . ' Miles<br>' . $result['KM'] . ' KM';
+}
 ?>
+<!DOCTYPE html>
+<html>
+<head>
+<title>Calculate Distance between 2 Zip/Postal Codes</title>
+</head>
+
+<body>
+<form action="#" method="GET">
+	<label for="zip1">Zip Code From</label><input type="number" name="zip1" />
+	<label for="zip2">Zip Code To</label><input type="number" name="zip2" />
+	<label for="unit">Zip Code To</label><select name="unit" >
+	<option value="km">KM</option>
+	<option value="miles">Miles</option>
+	<option value="">Both</option>
+	</select>
+	<input type="submit" name="submit" />
+</form>
+</body>
+
+</html>
