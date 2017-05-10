@@ -8,7 +8,7 @@ $zip1 = $df->getLnt($_GET['zip1']);
 $zip2 = $df->getLnt($_GET['zip2']);
 $result = $df->ConvertLatLong($zip1, $zip2);
 
-if(isset($_GET['unit'])) {
+if(isset($_GET['unit']) && $_GET['unit'] != '') {
 	$unit = $_GET['unit'];
 	if($unit === 'km')
 		echo $result['KM'] . ' KM';
